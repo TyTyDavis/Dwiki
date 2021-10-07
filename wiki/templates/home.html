@@ -1,0 +1,15 @@
+<html>
+<head>
+  </head>
+<body>
+  {% if objects %}
+  <ul>
+      {% for object in objects %}
+          <li>
+              <a href="/wiki/{{ object.title }}">{{ object }}</a>
+          </li>
+      {% endfor %}
+  </ul>
+  {% endif %}
+</body>
+</html>

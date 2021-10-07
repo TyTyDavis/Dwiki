@@ -6,7 +6,7 @@ from django.shortcuts import get_list_or_404, get_object_or_404
 
 def index(request):
     a = Article.objects.get(pk=1)
-    return render(request,"hello.html",{"title" : a.title, "body" : a.body})
+    return render(request,"home.html",{"objects" : Article.objects.all()})
 
 def articleView(request, url_title):
     a = get_object_or_404(Article, title=url_title)
