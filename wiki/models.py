@@ -11,7 +11,8 @@ TYPES = (
 class Article(models.Model):
     title = models.CharField(max_length=100)
     body = models.TextField()
-    create_date = models.DateField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)
     type = models.CharField(max_length=1, choices=TYPES)
 
     def __str__(self):
