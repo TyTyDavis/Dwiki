@@ -5,7 +5,9 @@
 <h1>{{ title }}</h1>
 <p>{{ body }}
 
-
+{% url 'edit' pk=pk as the_url %}
+<p><a href="{{ the_url }}">Edit this article</a>
+<br>
 <p><a href="{% url 'home' %}">Home page</a>
 
 </body>
