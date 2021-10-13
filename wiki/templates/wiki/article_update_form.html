@@ -6,5 +6,8 @@
     {{ form.as_p }}
     <input type="submit" value="Save">
 </form>
+<br>
+{% url 'delete' pk=object.pk as the_url %}
+<p><a href="{{ the_url }}">Delete this article</a>
 </body>
 </html>

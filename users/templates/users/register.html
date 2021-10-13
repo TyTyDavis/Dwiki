@@ -1,0 +1,14 @@
+<html>
+<body>
+<h1>Create an account</h1>
+
+<form method="POST" class="form-group">
+  {% csrf_token %}
+  {{form.as_p }}
+  <button type="submit" class="btn btn-success">Register</button>
+</form>
+
+
+
+</body>
+</html>
