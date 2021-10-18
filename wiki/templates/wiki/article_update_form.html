@@ -2,6 +2,7 @@
 <head>
   </head>
 <body>
+{% if user.is_authenticated %}
 <form method="post">{% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Save">
@@ -9,5 +10,8 @@
 <br>
 {% url 'delete' pk=object.pk as the_url %}
 <p><a href="{{ the_url }}">Delete this article</a>
+{% else %}
+<p>You must <a href="/login">login</a> to edit articles.
+{% endif %}
 </body>
 </html>
