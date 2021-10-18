@@ -5,8 +5,10 @@
 <h1>{{ title }}</h1>
 <p>{{ body }}
 
+{% if user.is_authenticated %}
 {% url 'edit' pk=pk as the_url %}
 <p><a href="{{ the_url }}">Edit this article</a>
+{% endif %}
 <br>
 <p><a href="{% url 'home' %}">Home page</a>
 

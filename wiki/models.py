@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from django.template.defaultfilters import slugify
+from django.contrib.auth.models import User
 
 TYPES = (
                  ('L', 'Locations'),
@@ -15,7 +16,7 @@ class Article(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     type = models.CharField(max_length=1, choices=TYPES)
-
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         return "%s (%s)" %(self.title, self.type)
